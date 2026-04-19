@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Vinícius</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap">
+</head>
+<body>
+    <!-- Tela de Início -->
+    <div id="pokedex-home">
+        <img src="imagens/logo.svg" alt="Logo" class="home-logo">
+        <h1 class="home-title">Pokédex</h1>
+        <button id="btn-iniciar">Iniciar Jornada</button>
+    </div>
+
+    <!-- App da Pokédex -->
+    <div id="pokedex-app" class="hidden">
+        <div class="sessao-busca">
+            <input type="text" id="pesquisa-input" placeholder="Nome ou ID">
+            <button id="btn-buscar">Buscar</button>
+        </div>
+
+        <div id="pokemon-display">
+            <div id="loading" class="hidden">Carregando...</div>
+            
+            <div id="pokemon-card" class="hidden">
+                <img id="pokemon-img" src="" alt="Pokémon">
+                <h2 id="pokemon-nome"></h2>
+                <p id="pokemon-info"></p>
+            </div>
+
+            <div id="erro" class="hidden">Pokémon não encontrado!</div>
+        </div>
+
+        <div class="navegacao">
+            <button id="btn-voltar">Anterior</button>
+            <button id="btn-avancar">Próximo</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

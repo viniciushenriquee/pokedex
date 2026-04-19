@@ -1,0 +1,198 @@
+/* src/style.css */
+
+:root {
+    --primary: #3b4cca; /* Azul Pokémon */
+    --secondary: #2a38b1; /* Azul mais escuro */
+    --accent: #00bcd4; /* Azul ciano para destaques */
+    --bg-url: url('imagens/Fundo azul abstrato de quadrinhos_files/fundo-azul-abstrato-de-quadrinhos_225004-669.jpg');
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Roboto', sans-serif; 
+}
+
+body {
+    background-image: var(--bg-url);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Tela de Início (Home) */
+#pokedex-home {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    max-width: 400px;
+    width: 100%;
+}
+
+.home-logo { 
+    width: 100%; 
+    max-width: 280px; 
+    animation: bounce 2s infinite ease-in-out; 
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+}
+
+.home-title { 
+    margin: 25px 0; 
+    color: var(--primary); 
+    font-family: 'Comic Neue', cursive; 
+    font-size: 2rem;
+}
+
+#btn-iniciar {
+    padding: 15px 40px;
+    background: var(--primary);
+    color: white;
+    border: 3px solid white;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 5px 15px rgba(59, 76, 202, 0.4);
+}
+
+#btn-iniciar:hover {
+    transform: scale(1.05);
+    background: var(--secondary);
+}
+
+/* App Screen */
+#pokedex-app {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    border-top: 10px solid var(--primary);
+    animation: fadeIn 0.5s ease;
+}
+
+.sessao-busca { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 25px; 
+}
+
+#pesquisa-input { 
+    flex: 1; 
+    padding: 12px; 
+    border-radius: 12px; 
+    border: 2px solid #eee; 
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#pesquisa-input:focus {
+    border-color: var(--primary);
+}
+
+#btn-buscar { 
+    padding: 10px 20px; 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+#btn-buscar:hover {
+    background: var(--secondary);
+}
+
+/* Card do Pokémon */
+#pokemon-card {
+    animation: slideUp 0.4s ease;
+}
+
+#pokemon-img { 
+    width: 200px; 
+    height: 200px; 
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+#pokemon-nome { 
+    text-transform: uppercase; 
+    margin: 15px 0; 
+    color: #333; 
+    font-size: 1.5rem;
+}
+
+#pokemon-info { 
+    background: #f0f7ff; 
+    padding: 15px; 
+    border-radius: 15px; 
+    white-space: pre-line; 
+    color: #555; 
+    line-height: 1.6;
+    font-size: 0.95rem;
+    border: 1px solid #e0e0ff;
+}
+
+/* Navegação */
+.navegacao { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 25px; 
+    gap: 15px;
+}
+
+.navegacao button { 
+    flex: 1;
+    padding: 12px; 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.navegacao button:hover:not(:disabled) {
+    background: var(--secondary);
+}
+
+.navegacao button:disabled { 
+    background: #e0e0e0; 
+    color: #999;
+    cursor: not-allowed; 
+}
+
+/* Utilitários */
+.hidden { display: none !important; }
+
+#loading { color: var(--primary); font-weight: bold; margin: 20px 0; }
+#erro { color: #f44336; font-weight: bold; margin: 20px 0; }
+
+/* Animações */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
