@@ -24,7 +24,7 @@ Uma Pokédex moderna e responsiva desenvolvida com HTML, CSS e JavaScript puro (
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/pokedex.git
+   git clone https://github.com/viniciushenriquee/pokedex.git
    ```
 2. **Navegue até a pasta do projeto:**
    ```bash
